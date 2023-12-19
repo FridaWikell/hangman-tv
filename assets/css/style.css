@@ -14,7 +14,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Patrick Hand', sans-serif;
-
+    background-color: #C1C1C1;
 }
 
 h1, h2, h3, h4 {
@@ -27,10 +27,9 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #C1C1C1;
 }
 
-header hr {
+hr {
     margin: 5px 0 8px 0; 
     border: 1px solid #000000;
     width: 90%;
@@ -40,7 +39,7 @@ header hr {
 
 main {
     color: #f7f4f4;
-    background-color: #C1C1C1;
+    flex: 1 0 auto;
 }
 
 #chalkboard {
@@ -53,3 +52,18 @@ main {
 }
 
 /* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+
+#rules {
+    padding: 10px 12px;
+}
+
+footer hr {
+    margin-bottom: 15px;
+}
