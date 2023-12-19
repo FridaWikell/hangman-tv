@@ -1,0 +1,55 @@
+/* Fonts from Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Englebert&family=Patrick+Hand&display=swap');
+
+/* Override browsers default styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Patrick Hand', sans-serif;
+
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Englebert', sans-serif;
+}
+
+/* Header */
+header {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #C1C1C1;
+}
+
+header hr {
+    margin: 5px 0 8px 0; 
+    border: 1px solid #000000;
+    width: 90%;
+}
+
+/* Main content */
+
+main {
+    color: #f7f4f4;
+    background-color: #C1C1C1;
+}
+
+#chalkboard {
+    background: url("../images/chalkboard.webp") no-repeat center center/cover;
+    width: 90%;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
+    border: solid 2px #000000;
+}
+
+/* Footer */
