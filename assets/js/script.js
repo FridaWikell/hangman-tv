@@ -1,5 +1,7 @@
 // General
 let keyboardAbc = document.getElementById("keyboard");
+let answerDisplay = document.getElementById("correct-answer");
+
 
 // Creating keyboard - from https://www.codingnepalweb.com/build-hangman-game-html-javascript/
 
@@ -9,6 +11,7 @@ for (let i = 97; i <= 122; i++) {
     button.innerText = String.fromCharCode(i);
     keyboardAbc.appendChild(button);
 }
+
 
 // Answers and hints
 let hintAnswers = [{
@@ -28,6 +31,7 @@ let randomQuestionHint = Object.values(randomQuestion)[0];
 let randomQuestionAnswer = Object.values(randomQuestion)[1];
 
 document.getElementById("hint").innerText = randomQuestionHint;
+answerDisplay.innerHTML = randomQuestionAnswer.split("").map(() => `<li class = "abcde"></li>`).join("");
 }
 
 selectAQuestion();
