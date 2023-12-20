@@ -12,6 +12,8 @@
 body {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-height: 100vh;
     font-family: 'Patrick Hand', sans-serif;
     background-color: #C1C1C1;
@@ -49,6 +51,18 @@ main {
     position: relative;
     margin: 0 auto;
     border: solid 2px #000000;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#hangman {
+    background: url("../images/hangman.png") no-repeat center center/cover;
+    position: relative;
+    height: 300px;
+    margin: 10px 20px;
+    flex-basis: 100%;
 }
 
 /* Footer */
