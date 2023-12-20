@@ -5,26 +5,29 @@ let keyboardAbc = document.getElementById("keyboard");
 
 // HÄR SAKNAS EN EVENT LISTENER!
 for (let i = 97; i <= 122; i++) {
-    var button = document.createElement("button");
+    let button = document.createElement("button");
     button.innerText = String.fromCharCode(i);
     keyboardAbc.appendChild(button);
 }
 
+// Answers and hints
+let hintAnswers = [{
+        hint: "A hero with a green brother",
+        answer: "super mario"
+}, {
+    hint: "His mission is to save goddess Palutena",
+    answer: "kid icarus"
+}];
+        
+
 // Randomise question
-function randomQuestion() {
-    let question = answersHint[Math.floor(Math.random() * answersHint.length)];
-    let currentAnswer = answersHint[0];
-    let currentHint = answersHint[1];
+function selectAQuestion() {
+let randomQuestion = hintAnswers[Math.floor(Math.random() * hintAnswers.length)];
+
+let randomQuestionHint = Object.values(randomQuestion)[0];
+let randomQuestionAnswer = Object.values(randomQuestion)[1];
+
+document.getElementById("hint").innerText = randomQuestionHint;
 }
 
-// Answers and hints
-let answersHint = [
-    {
-        answer: "super mario",
-        hint: "A hero with a green brother"
-    },
-    {
-        answer: "kid icarus"
-        hint: "His mission is to save goddess Palutena"
-    }
-];
+selectAQuestion();
