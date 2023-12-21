@@ -3,9 +3,9 @@ let keyboardAbc = document.getElementById("keyboard");
 let answerDisplay = document.getElementById("correct-answer");
 let mistakes = 0;
 let usedLetters = [];
-let maximumMistakes = 6;
+let maximumMistakes = 7;
 
-maximumMistakes = document.getElementById("mistakes").innerText;
+maximumMistakes = document.getElementById("mistakes").innerHTML;
 
 
 // Creating keyboard - from https://github.com/simonjsuh/Vanilla-Javascript-Hangman-Game/blob/master/js/hangman.js
@@ -48,15 +48,16 @@ answerDisplay.innerHTML = randomQuestionAnswer.split("").map(() => `<li class = 
 
 // Compare input and question
 function compareAnswers(chosenLetter) {
+    alreadyUsedLetters();
+    disableLetter();
+    
    if (randomQuestionAnswer.indexOf(chosenLetter) != 0) {
         isGameWon();
         hangmanWord();
-        disableLetter();
    } else {
         hangmanImage();
         mistakes++
         newMistakes();
-        disableLetter();
         isGameOver();
    }
 }
@@ -74,8 +75,11 @@ function newMistakes() {
 }
 
 function disableLetter() {
-    usedLetters.push(chosenLetter);
     document.getElementById(chosenLetter).setAttribute("disabled");
+}
+
+function alreadyUsedLetters() {
+    usedLetters.push(chosenLetter);
 }
 
 function isGameOver() {
