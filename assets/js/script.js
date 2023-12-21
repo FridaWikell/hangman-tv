@@ -51,7 +51,7 @@ function compareAnswers(chosenLetter) {
     alreadyUsedLetters();
     disableLetter();
     
-   if (randomQuestionAnswer.indexOf(chosenLetter) != 0) {
+    if (randomQuestionAnswer.indexOf(chosenLetter) != 0) {
         isGameWon();
         hangmanWord();
    } else {
@@ -62,34 +62,37 @@ function compareAnswers(chosenLetter) {
    }
 }
 
-function isGameWon()
+// Chck if the game is won
+//function isGameWon()
 
-function hangmanWord()
+// Add the correct guess to the shown word
+//function hangmanWord()
 
+//Update Hangman Image when a incorrect answer is made
 function hangmanImage() {
     document.getElementById("hangman").src = "assets/images/hangman" + mistakes + ".png";
 }
 
+// Add a new mistake
 function newMistakes() {
     document.getElementById("mistakes-made").innerHTML = mistakes;
 }
 
+// Get a letter disabled
 function disableLetter() {
     document.getElementById(chosenLetter).setAttribute("disabled");
 }
 
+// Add to already used letters after a guess
 function alreadyUsedLetters() {
     usedLetters.push(chosenLetter);
 }
 
+// Check if the game is over
 function isGameOver() {
     if (mistakes === maximumMistakes) {
         document.getElementById("keybord").innerHTML = "You lost!";
     }
-}
-
-function usedLetters () {
-
 }
 
 selectAQuestion();
